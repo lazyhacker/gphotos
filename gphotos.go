@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/oauth2"
 	"lazyhacker.dev/gclientauth"
-	googlephotos "lazyhacker.dev/googlephotos/clientlib"
+	gp "lazyhacker.dev/googlephotos/photoslibrary"
 )
 
 var (
@@ -20,7 +20,7 @@ var (
 func main() {
 
 	flag.Parse()
-	scopes := []string{googlephotos.PhotoslibraryReadonlyScope}
+	scopes := []string{gp.PhotoslibraryReadonlyScope}
 
 	ctx := oauth2.NoContext
 	token, config, err := gclientauth.GetGoogleOauth2Token(ctx, *client_secret, *tokencache, scopes, *browser, *port)
@@ -32,7 +32,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	gp, err := googlephotos.New(cfg)
+	gp, err := gp.New(cfg)
 	if err != nil {
 		log.Fatal(err)
 	}
