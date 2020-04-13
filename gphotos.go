@@ -7,8 +7,7 @@ import (
 
 	"golang.org/x/oauth2"
 	"lazyhacker.dev/gclientauth"
-	_ "lazyhacker.dev/googlephotos"
-	googlephotos "lazyhacker.dev/googlephotos/v1"
+	googlephotos "lazyhacker.dev/googlephotos/clientlib"
 )
 
 var (
